@@ -1,0 +1,537 @@
+/* ==========================================================================
+   NEO-BRUTALIST TEMEL STILLER
+   Renkler: Zemin #F5F3E7, Yazı #1C2B70, Vurgu #F46755
+   Kural: Her kutuda 3px siyah kenarlık, 6px 6px 0 #000 gölge, Space Grotesk
+   ========================================================================== */
+
+:root {
+  --renk-zemin: #F5F3E7;
+  --renk-yazi: #1C2B70;
+  --renk-vurgu: #F46755;
+  --renk-siyah: #000000;
+  --renk-beyaz: #FFFFFF;
+  --kenarlik: 3px solid #000000;
+  --golge: 6px 6px 0 #000000;
+  --golge-hover: 8px 8px 0 #000000;
+  --golge-active: 2px 2px 0 #000000;
+  --yazi-tipi: 'Space Grotesk', sans-serif;
+  --menu-yukseklik: 72px;
+}
+
+/* Sıfırlama ve Temel Yapı */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--menu-yukseklik);
+}
+
+body {
+  background-color: var(--renk-zemin);
+  color: var(--renk-yazi);
+  font-family: var(--yazi-tipi);
+  line-height: 1.6;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+/* Başlıklar */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--yazi-tipi);
+  font-weight: 700;
+  color: var(--renk-yazi);
+  line-height: 1.2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Genel Buton Tarzı (Neo-brutalist) */
+.neo-buton {
+  display: inline-block;
+  background-color: var(--renk-vurgu);
+  color: var(--renk-beyaz);
+  font-weight: 700;
+  padding: 12px 24px;
+  border: var(--kenarlik);
+  box-shadow: var(--golge);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.neo-buton:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--golge-hover);
+}
+
+.neo-buton:active {
+  transform: translate(2px, 2px);
+  box-shadow: var(--golge-active);
+}
+
+/* ==========================================================================
+   SABİT ÜST MENÜ
+   ========================================================================== */
+.ust-menu {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--menu-yukseklik);
+  background-color: var(--renk-zemin);
+  border-bottom: var(--kenarlik);
+  z-index: 1000;
+}
+
+.menu-kapsayici {
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border: var(--kenarlik);
+  padding: 6px 14px;
+  background-color: var(--renk-vurgu);
+  color: var(--renk-beyaz);
+  box-shadow: 4px 4px 0 var(--renk-siyah);
+}
+
+.nav-baglantilar {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-link {
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 8px 14px;
+  border: var(--kenarlik);
+  background-color: var(--renk-beyaz);
+  box-shadow: 3px 3px 0 var(--renk-siyah);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.nav-link:hover {
+  background-color: var(--renk-vurgu);
+  color: var(--renk-beyaz);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--renk-siyah);
+}
+
+.nav-link.aktif {
+  background-color: var(--renk-vurgu);
+  color: var(--renk-beyaz);
+}
+
+/* ==========================================================================
+   BÖLÜM YAPISI
+   ========================================================================== */
+.bolum {
+  padding: 80px 20px;
+}
+
+.bolum-kapsayici {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.bolum-baslik-kutu {
+  margin-bottom: 40px;
+  display: inline-block;
+}
+
+.bolum-baslik {
+  font-size: 2.2rem;
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: var(--renk-vurgu);
+  color: var(--renk-beyaz);
+  border: var(--kenarlik);
+  box-shadow: var(--golge);
+}
+
+/* ==========================================================================
+   1. BÖLÜM: KAPAK (TAM EKRAN)
+   ========================================================================== */
+.kapak-bolumu {
+  min-height: calc(100vh - var(--menu-yukseklik));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.kapak-icerik {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+}
+
+.kapak-gorsel-kutu {
+  flex: 0 0 380px;
+  border: var(--kenarlik);
+  box-shadow: var(--golge);
+  background-color: var(--renk-beyaz);
+  overflow: hidden;
+}
+
+.kapak-gorsel {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+}
+
+.kapak-metin-kutu {
+  flex: 1;
+  max-width: 580px;
+  background-color: var(--renk-beyaz);
+  border: var(--kenarlik);
+  box-shadow: var(--golge);
+  padding: 40px;
+}
+
+.etiket {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border: var(--kenarlik);
+  background-color: var(--renk-zemin);
+  margin-bottom: 16px;
+}
+
+.kapak-baslik {
+  font-size: 3.5rem;
+  margin-bottom: 16px;
+  color: var(--renk-yazi);
+}
+
+.kapak-tanitim {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+/* ==========================================================================
+   2. BÖLÜM: HAKKIMDA
+   ========================================================================== */
+.hakkimda-kart {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  background-color: var(--renk-beyaz);
+  border: var(--kenarlik);
+  box-shadow: var(--golge);
+  padding: 36px;
+}
+
+.hakkimda-gorsel-kutu {
+  flex: 0 0 280px;
+  border: var(--kenarlik);
+  box-shadow: 4px 4px 0 var(--renk-siyah);
+  background-color: var(--renk-zemin);
+  overflow: hidden;
+}
+
+.maskot-gorsel {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.hakkimda-metin-kutu {
+  flex: 1;
+}
+
+.hakkimda-paragraf {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  font-weight: 500;
+  color: var(--renk-yazi);
+}
+
+/* ==========================================================================
+   3. BÖLÜM: İLGİ ALANLARIM
+   ========================================================================== */
+.kartlar-izgara {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.ilgi-karti {
+  background-color: var(--renk-beyaz);
+  border: var(--kenarlik);
+  box-shadow: var(--golge);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ilgi-karti:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--golge-hover);
+}
+
+.kart-gorsel-kutu {
+  width: 100%;
+  height: 260px;
+  border-bottom: var(--kenarlik);
+  overflow: hidden;
+  background-color: var(--renk-zemin);
+}
+
+.kart-gorsel {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kart-icerik {
+  padding: 24px;
+  flex: 1;
+}
+
+.kart-baslik {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: var(--renk-yazi);
+  border-bottom: 2px solid var(--renk-siyah);
+  padding-bottom: 6px;
+  display: inline-block;
+}
+
+.kart-metin {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--renk-yazi);
+}
+
+/* ==========================================================================
+   4. BÖLÜM: İLETİŞİM
+   ========================================================================== */
+.iletisim-kutu {
+  background-color: var(--renk-beyaz);
+  border: var(--kenarlik);
+  box-shadow: var(--golge);
+  padding: 40px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.iletisim-aciklama {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+  color: var(--renk-yazi);
+}
+
+.iletisim-aksiyon {
+  display: flex;
+  justify-content: center;
+}
+
+.iletisim-link {
+  font-size: 1.15rem;
+  padding: 14px 28px;
+}
+
+/* ==========================================================================
+   ALTBİLGİ (FOOTER)
+   ========================================================================== */
+.alt-bilgi {
+  background-color: var(--renk-zemin);
+  border-top: var(--kenarlik);
+  padding: 30px 20px;
+  margin-top: 40px;
+}
+
+.alt-bilgi-kapsayici {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.telif {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.yapay-zeka-notu {
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border: var(--kenarlik);
+  background-color: var(--renk-vurgu);
+  color: var(--renk-beyaz);
+  box-shadow: 3px 3px 0 var(--renk-siyah);
+}
+
+/* ==========================================================================
+   DUYARLI TASARIM (RESPONSIVE / TELEFON UYUMLU)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .kartlar-izgara {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .kapak-icerik {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .kapak-gorsel-kutu {
+    flex: 0 0 auto;
+    width: 280px;
+  }
+
+  .kapak-gorsel {
+    height: 280px;
+  }
+
+  .hakkimda-kart {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hakkimda-gorsel-kutu {
+    width: 240px;
+    height: 240px;
+  }
+
+  .maskot-gorsel {
+    height: 240px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --menu-yukseklik: auto;
+  }
+
+  .ust-menu {
+    height: auto;
+    padding: 12px 0;
+  }
+
+  .menu-kapsayici {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-baglantilar {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .nav-link {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+
+  .kartlar-izgara {
+    grid-template-columns: 1fr;
+  }
+
+  .kapak-baslik {
+    font-size: 2.5rem;
+  }
+
+  .kapak-tanitim {
+    font-size: 1.05rem;
+  }
+
+  .kapak-metin-kutu {
+    padding: 24px 16px;
+  }
+
+  .bolum {
+    padding: 50px 16px;
+  }
+
+  .bolum-baslik {
+    font-size: 1.6rem;
+  }
+
+  .hakkimda-kart {
+    padding: 24px 16px;
+  }
+
+  .hakkimda-paragraf {
+    font-size: 1.05rem;
+  }
+
+  .iletisim-kutu {
+    padding: 28px 16px;
+  }
+
+  .iletisim-link {
+    font-size: 0.95rem;
+    padding: 10px 16px;
+    word-break: break-all;
+  }
+
+  .alt-bilgi-kapsayici {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ==========================================================================
+   HAREKETİ AZALTMAYI SEÇEN KULLANICILAR (PREFERS-REDUCED-MOTION)
+   Kural: Hareketi azaltmayı seçen kullanıcılarda animasyon ve geçiş olmasın.
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .neo-buton:hover,
+  .neo-buton:active,
+  .nav-link:hover,
+  .ilgi-karti:hover {
+    transform: none !important;
+    box-shadow: var(--golge) !important;
+  }
+}
